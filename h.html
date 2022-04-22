@@ -1,0 +1,988 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2022-04-22 Fri 09:19 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { width: 90%; }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#org9bd422e">1. 兽医临床</a>
+<ul>
+<li><a href="#orgb6d3b5e">1.1. 第一章</a></li>
+<li><a href="#orgc1550c5">1.2. 第四章</a>
+<ul>
+<li><a href="#orgc53ccf9">1.2.1. 中心粒细胞增多症的机制</a></li>
+<li><a href="#orgdf54165">1.2.2. 中性粒细胞减少</a></li>
+<li><a href="#orga453e2f">1.2.3. 中毒性变化</a></li>
+<li><a href="#orgb2d4e96">1.2.4. 淋巴细胞增多症</a></li>
+<li><a href="#orge3876f5">1.2.5. 白血病的诊断</a></li>
+<li><a href="#org4bc7c15">1.2.6. 嗜酸性粒细胞增多</a></li>
+<li><a href="#org66f35d8">1.2.7. 白细胞的评价方法</a></li>
+</ul>
+</li>
+<li><a href="#org570c905">1.3. 第五章</a>
+<ul>
+<li><a href="#orgf1e9b92">1.3.1. 血栓形成</a></li>
+<li><a href="#org9f623bb">1.3.2. 二）血小板的功能</a></li>
+<li><a href="#orga4a7913">1.3.3. 纤溶激活物</a></li>
+<li><a href="#org58acdee">1.3.4. 血小板异常的检查方法</a></li>
+<li><a href="#org9ec5cde">1.3.5. 血管壁异常的检查</a></li>
+</ul>
+</li>
+<li><a href="#org0a7cd29">1.4. 第六章</a>
+<ul>
+<li><a href="#org8a51376">1.4.1. 一、低钠血症</a></li>
+<li><a href="#org48bf793">1.4.2. 高钠血症</a></li>
+<li><a href="#org87398be">1.4.3. 高钾血症的治疗</a></li>
+<li><a href="#orgf136ace">1.4.4. </a></li>
+</ul>
+</li>
+<li><a href="#orgcfd5d34">1.5. 第七章</a>
+<ul>
+<li><a href="#org6834b24">1.5.1. 癌症的细胞学分类</a></li>
+<li><a href="#orge2db9eb">1.5.2. 癌症的细胞学特征</a></li>
+<li><a href="#org7f1e01d">1.5.3. 肿物的细胞学特征</a></li>
+<li><a href="#org22f7273">1.5.4. 中性粒细胞退行性变化</a></li>
+</ul>
+</li>
+<li><a href="#org09b08f2">1.6. 第八章</a>
+<ul>
+<li><a href="#org8bce598">1.6.1. 白球比</a></li>
+<li><a href="#orgd2dd4aa">1.6.2. 高蛋白血症、地板白血症原因</a></li>
+<li><a href="#orgc2085d4">1.6.3. （一）胆固醇</a></li>
+<li><a href="#org6c654e6">1.6.4. 高脂血症的原因</a></li>
+<li><a href="#orgb823bd7">1.6.5. 一、葡萄糖</a></li>
+<li><a href="#orge483169">1.6.6. 低糖血症</a></li>
+<li><a href="#org43301d9">1.6.7. 乳酸</a></li>
+<li><a href="#org0094503">1.6.8. 高脂血症特点①胆固醇含量高；②甘油三酯含量高；③低HDL</a></li>
+</ul>
+</li>
+<li><a href="#org42f7ebb">1.7. 第九章</a>
+<ul>
+<li><a href="#orgea0eabc">1.7.1. 三种高胆红素血症的鉴别</a></li>
+<li><a href="#org51c8d7d">1.7.2. 溴磺酞钠（BSP）清除试验</a></li>
+<li><a href="#orga7ae3c5">1.7.3. 血清胆汁酸升高的临床意义</a></li>
+<li><a href="#orgd4eba9f">1.7.4. 肝脏合成功能试验</a></li>
+<li><a href="#org52830d7">1.7.5. 黄疸的鉴别诊断</a></li>
+<li><a href="#orge29be8c">1.7.6. 一、肝组织活检的意义和应用</a></li>
+</ul>
+</li>
+<li><a href="#org3c601f6">1.8. 第十章</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div id="outline-container-org9bd422e" class="outline-2">
+<h2 id="org9bd422e"><span class="section-number-2">1.</span> 兽医临床</h2>
+<div class="outline-text-2" id="text-1">
+</div>
+<div id="outline-container-orgb6d3b5e" class="outline-3">
+<h3 id="orgb6d3b5e"><span class="section-number-3">1.1.</span> 第一章</h3>
+<div class="outline-text-3" id="text-1-1">
+<ul class="org-ul">
+<li>循证医学(Evidence-basedmedicine，EBM)，意为“遵循证据的医学”，又称实证医学，证据医学。其核心思想是医疗决策应在现有的最好的临床研究依据基础上作出，同时也重视结合个人的临床经验。
+关键环节:最好的研究证据; 临床专业知识、数据和经验;患者的价值。</li>
+<li>循证兽医学(Evidence-basedveterinary medicine，EVM)，是结合兽医临床专业知识，利用最佳相关证据，对患病动物做出最佳决策的兽医学。 在进行循证决策时，还要考虑每个患病动物的情况以及主人/护理人员的情况和关切。</li>
+<li>临床检验的发展趋势：项目多，水平高，结论快</li>
+<li>保定、无污染、登记全信息
+晨尿、随机尿、计时尿
+冷藏(4 °C，6h)、防腐 (甲醛，甲苯，麝香草酚，24h)</li>
+<li>直肠取粪，采粪管柿子取粪；外观，显微镜（黏液，脓血），隐血试验；寄生虫检查
+粪便焚化炉烧毁，容器浸泡于过氧乙酸 0.1%</li>
+<li>心包液，10%乙醇，2-4摄氏度，不超过2h</li>
+<li>刮擦细胞样品：刷取、刮取、灌洗
+穿刺组织样品
+手术采集</li>
+<li>样品浓缩
+离心法、细胞离心法
+滤膜过滤法
+细胞块法（细胞块切片、琼脂包埋、血浆凝血酶原凝集法）</li>
+<li>全血(whole blood)
+<ol class="org-ol">
+<li>静脉全血(主要血源)：大动物:颈静脉，尾静脉，前腔静脉 小动物： 前臂皮下静脉 前肢浅层静脉 前臂头静脉</li>
+<li>动脉全血 主要用于血气分析，采血部位主要有股动脉。</li>
+<li>毛细血管全血 微量血液检验。</li>
+</ol></li>
+<li>血浆(plasma)：血浆化学成分测定和凝血试验等。</li>
+<li>血清(serum)：兽医临床化学和免疫学等的检测。</li>
+<li>分离或浓缩的血细胞成分：细胞免疫学检测</li>
+</ul>
+
+<p>
+血常规管 (紫帽):EDTA 与血液中的钙离子螯合，血常规
+肝素管 (绿帽) : 加强抗凝血酶III 血气分析，红细胞渗透脆性试验
+浅绿色：肝素锂：分离血浆，
+ (枸橼酸钠凝血试验管)-浅蓝头盖：凝血试验 1:9
+(枸橼酸钠血沉试验管)-黑色头盖：血沉试验 1:4
+血糖管 (灰色): 采血管加入了氟化物作抑制剂，由于抑制剂的加入及试管内壁的特殊处理，使得血样的原始性状保持时间较长，血细胞代谢基本停滞。广泛应用于血糖、糖耐量、红细胞电泳、抗碱血红蛋白、糖溶血等项目的检查。
+红橘色黄色橙色促凝剂 分离胶 血清生化
+</p>
+
+<p>
+干细胞 》BFU-e 》CFU-e 》原红细胞、早幼红细胞、中幼红细胞、晚幼红细胞、网织红细胞 》红细胞
+血氧分压 降低 Epo升高； BPA
+</p>
+
+<p>
+细胞体积 大 小(早幼粒大于原粒，巨核细胞由小到大)
+细胞核 大小
+核形 圆 凹陷 分叶
+核浆比 大 小
+核染色质结构 细致、疏松 -&gt; 粗糙、紧密
+核仁 有无
+胞浆 少 多(淋巴除外)
+胞浆颜色 蓝 淡蓝、红
+胞浆颗粒 无 有
+</p>
+
+<p>
+糖原无氧酵解经路：磷酸果糖激酶缺乏症
+磷酸戊糖途径：G-6-PD 缺陷症(正丙基二硫化合物)，导致溶血性贫血，红细胞中有海恩茨小体(Heinz body)
+B族维生素对红细胞的影响：叶酸缺乏 VB &lt;sub&gt;12&lt;/sub&gt; 缺乏 转甲基反应受阻 DNA合成受阻 巨红细胞性贫血。
+高铁血红蛋白还原酶通路 使血红蛋白保持还原状态，以携带氧气  疾病:硝酸盐中毒
+</p>
+
+<p>
+主要途径:通过血管外巨噬细胞吞噬径路被清除 (肝脏，脾脏和骨髓的单核-巨噬系统
+次要途径: 血管内溶血而清除: 产物:红细胞→ 血红蛋白(游离胆红素、球蛋 白、Fe); 溶血性贫血的患病动物主要是取第二条路径。
+</p>
+
+<p>
+影响MCV的因素: 1.巨红细胞性贫血时， MCV增高;见于维
+生素B12缺乏及叶酸缺乏; 2.网织红细胞增多可以引起暂时性MCV增高;
+3.铁缺乏可引起MCV的降低;
+</p>
+
+<p>
+影响MCHC的因素: 1.MCHC值降低:网织红细胞增多及铁缺乏; 2.MCHC值增高:在试管内或活体内的溶血; 3.明显的球形红细胞症时，MCHC值可能会增高。
+RPI的意义:
+1RPI&gt;3，
+溶血性贫血或急性失血性贫血; 48~72h后明显，7天可能达到峰值。
+2 1&lt;RPI&lt;2 慢性失血，表明骨髓增生低下。
+3溶血性贫血时明显
+4犬的网织红细胞反应强烈。
+</p>
+
+<p>
+mcv mchc 都不变 正常细胞性正色素性贫血
+mcv 升高mchc降低  大细胞性正色素性贫血
+mcv升高 mchc升高 大细胞性低色素性贫血
+mcv降低 mchc降低 小细胞低色素
+</p>
+</div>
+</div>
+<div id="outline-container-orgc1550c5" class="outline-3">
+<h3 id="orgc1550c5"><span class="section-number-3">1.2.</span> 第四章</h3>
+<div class="outline-text-3" id="text-1-2">
+<p>
+早幼粒
+（嗜苯胺蓝颗粒、初级颗粒）、中幼粒（次级（特异性）颗粒 ）
+</p>
+</div>
+<div id="outline-container-orgc53ccf9" class="outline-4">
+<h4 id="orgc53ccf9"><span class="section-number-4">1.2.1.</span> 中心粒细胞增多症的机制</h4>
+<div class="outline-text-4" id="text-1-2-1">
+<ol class="org-ol">
+<li>生理性反应：</li>
+</ol>
+<p>
+-轻度中性粒细胞增多症，无核左移
+-轻度淋巴细胞增多
+机制：细胞从边缘池进入循环池。
+</p>
+<ol class="org-ol">
+<li>应激血象：</li>
+</ol>
+<p>
+-轻度至中度成熟中性粒细胞增多
+-淋巴细胞减少
+-单核细胞增多和/或嗜酸性粒细胞减少
+机制：皮质类固醇激素重新再分配
+抑制循环池中性粒细胞的迁移
+抑制嗜酸性粒细胞骨髓池释放；
+</p>
+<ol class="org-ol">
+<li>急性炎症</li>
+</ol>
+<p>
+-中性粒细胞增多症，伴有核左移
+机制：炎症时消耗大量分叶核。
+</p>
+<ol class="org-ol">
+<li>慢性炎症</li>
+</ol>
+<p>
+-明显的嗜中性白血球，各种程度左移位
+机制：中性粒细胞的产量增加
+封闭型与引流型创伤
+手术创伤
+组织损伤、坏死；
+感染或炎症；
+肿瘤；
+-轻度至明显的中性粒细胞增多症，通常有核左移
+机制：细胞因子介导
+“类白血病”反应
+</p>
+</div>
+</div>
+<div id="outline-container-orgdf54165" class="outline-4">
+<h4 id="orgdf54165"><span class="section-number-4">1.2.2.</span> 中性粒细胞减少</h4>
+<div class="outline-text-4" id="text-1-2-2">
+<p>
+组织需求大
+-急性化脓性炎症
+-在这种情况下牛经常会出现中性粒细胞减少
+-中毒性变化，核左移
+再生性核左移
+退行性核左移
+生成减少
+-放射性中毒，细胞毒性药物，雌激素中毒，
+病毒或埃里希氏菌感染，白血病
+•骨髓受侵害，中性粒细胞减少；
+•贫血或血小板减少
+•过少，&lt;0.5x109/L
+</p>
+</div>
+</div>
+<div id="outline-container-orga453e2f" class="outline-4">
+<h4 id="orga453e2f"><span class="section-number-4">1.2.3.</span> 中毒性变化</h4>
+<div class="outline-text-4" id="text-1-2-3">
+<p>
+1.Döhle小体：粗面内质网聚集
+2.碱性胞浆：RNA
+3.粗大颗粒（中毒性颗粒）：变性
+4.细胞浆空泡：自噬
+</p>
+</div>
+</div>
+<div id="outline-container-orgb2d4e96" class="outline-4">
+<h4 id="orgb2d4e96"><span class="section-number-4">1.2.4.</span> 淋巴细胞增多症</h4>
+<div class="outline-text-4" id="text-1-2-4">
+<p>
+1.肾上腺素介导
+2.疫苗接种
+3.慢性细菌感染
+4.病毒感染（BLV）
+5.淋巴细胞白血病
+6.传染病的恢复期
+</p>
+</div>
+</div>
+<div id="outline-container-orge3876f5" class="outline-4">
+<h4 id="orge3876f5"><span class="section-number-4">1.2.5.</span> 白血病的诊断</h4>
+<div class="outline-text-4" id="text-1-2-5">
+<p>
+1.血液或骨髓中的异常细胞
+2.骨髓炎特征-贫血，中性粒细胞减少和/或血
+小板减少
+3.血液涂片和骨髓检查
+4.治疗：取决于白血病的类型
+</p>
+</div>
+</div>
+<div id="outline-container-org4bc7c15" class="outline-4">
+<h4 id="org4bc7c15"><span class="section-number-4">1.2.6.</span> 嗜酸性粒细胞增多</h4>
+<div class="outline-text-4" id="text-1-2-6">
+<p>
+1.过敏反应
+2.寄生虫感染
+3.嗜酸性粒细胞浸润
+4.嗜酸性粒细胞增多综合征：
+-白血病
+-肥大细胞瘤，淋巴瘤
+</p>
+</div>
+</div>
+<div id="outline-container-org66f35d8" class="outline-4">
+<h4 id="org66f35d8"><span class="section-number-4">1.2.7.</span> 白细胞的评价方法</h4>
+<div class="outline-text-4" id="text-1-2-7">
+<p>
+一、白细胞计数
+（一）白细胞计数方法
+自动血细胞计数仪；
+需血涂片复查。
+（二）对白细胞计数值的校正
+对被检动物染色后的血涂片进行有核红细胞
+检查
+三）白细胞总数的异常
+</p>
+<ol class="org-ol">
+<li>生理性增多：</li>
+</ol>
+<p>
+① 强烈运动，采食后，妊娠和分娩；
+② 兴奋、恐惧和疼痛等应激
+</p>
+<ol class="org-ol">
+<li>病理性变化：</li>
+</ol>
+<p>
+(1)增多：病原菌引起；中毒；任何原因引起
+的组织坏死；急性出血和溶血；骨髓增殖性
+疾病。
+(2)减少：感染；休克；骨髓异常和淋巴肉瘤；
+药物和化学因素作用
+二、白细胞形态学异常
+1．中性粒细胞中毒性变化
+2．中性粒细胞过度分叶
+过度分叶（5~7叶）。
+核右移：
+中性粒细胞过度分叶的过多；
+分叶中性粒细胞数过多；
+核指数小于0.1。
+临床意义：
+① 炎症恢复期（炎症突然清除）
+② 皮质激素应用
+③ 造血功能减退
+</p>
+<ol class="org-ol">
+<li>包涵体</li>
+</ol>
+</div>
+</div>
+</div>
+<div id="outline-container-org570c905" class="outline-3">
+<h3 id="org570c905"><span class="section-number-3">1.3.</span> 第五章</h3>
+<div class="outline-text-3" id="text-1-3">
+</div>
+<div id="outline-container-orgf1e9b92" class="outline-4">
+<h4 id="orgf1e9b92"><span class="section-number-4">1.3.1.</span> 血栓形成</h4>
+<div class="outline-text-4" id="text-1-3-1">
+
+<div id="orgd6eb3f9" class="figure">
+<p><img src="file:///home/elijah/Pictures/Screenshots/Screenshot from 2022-04-21 20-58-23.png" alt="Screenshot from 2022-04-21 20-58-23.png" width="700" style="border:2px solid black;" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org9f623bb" class="outline-4">
+<h4 id="org9f623bb"><span class="section-number-4">1.3.2.</span> 二）血小板的功能</h4>
+<div class="outline-text-4" id="text-1-3-2">
+<p>
+1．粘附功能
+血管性假血友病因子（vWF）介导，封住较小
+内皮损伤，维持血管的完整性。
+2．聚集功能
+血块收缩，纤维蛋白网（血栓收缩蛋白）
+3．分泌功能（颗粒释放5-羟色胺、vWF）
+4．参与抗炎（促进白细胞募集）
+5．黏附于内皮下胶原（vWF桥梁连接）
+</p>
+</div>
+</div>
+<div id="outline-container-orga4a7913" class="outline-4">
+<h4 id="orga4a7913"><span class="section-number-4">1.3.3.</span> 纤溶激活物</h4>
+<div class="outline-text-4" id="text-1-3-3">
+
+<div id="org87a7e7b" class="figure">
+<p><img src="file:///home/elijah/Pictures/Screenshots/Screenshot from 2022-04-21 21-01-51.png" alt="Screenshot from 2022-04-21 21-01-51.png" width="700" style="border:2px solid black;" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org58acdee" class="outline-4">
+<h4 id="org58acdee"><span class="section-number-4">1.3.4.</span> 血小板异常的检查方法</h4>
+<div class="outline-text-4" id="text-1-3-4">
+<p>
+1．血小板形态
+大的或幼稚型血小板。
+提示：骨髓功能障碍；再生性反应。
+2．血小板功能的测定
+（1）血块退缩（clot retraction）
+凝血时，血块便逐渐收缩并挤出血清，2-4h会显著收缩
+，到24h末即变成一团致密的凝块 ，称为血块退缩。
+血块退缩不良，提示：
+①血小板减少（血栓退缩蛋白）；
+②血小板功能下降；
+③纤维蛋白原或凝血酶原显著减少；
+④贫血时血块回缩可缩短。
+（2）出血时间（bleeding time）
+检查毛细血管和血小板方面，正常为2-4min。
+①血管壁的异常；
+②血小板减少或血小板功能缺陷（vWF）；
+③肝脏疾病或尿毒症。
+注意：切口长度；
+应用条件：血小板功能异常
+（3）血小板功能的其它检查
+① 全血凝固时间（WBCT）；
+测定畜体血液凝固所需的时间
+② 血小板粘附和聚集力测定（ PAT）；
+③ 抗血小板抗体测定。
+</p>
+</div>
+</div>
+<div id="outline-container-org9ec5cde" class="outline-4">
+<h4 id="org9ec5cde"><span class="section-number-4">1.3.5.</span> 血管壁异常的检查</h4>
+<div class="outline-text-4" id="text-1-3-5">
+<p>
+血管壁异常的原因
+1．坏血病（Scurvy）
+临床特点：出血和骨骼病变。
+2．其他因素
+某些细菌、病毒、内源性毒素、寄生虫及其毒
+素和免疫复合物损伤血管内皮，小血管常有微
+血栓形成，引起感染性血管性紫癜。
+出血时间的检查；
+毛细血管脆性试验（束臂试验）。
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org0a7cd29" class="outline-3">
+<h3 id="org0a7cd29"><span class="section-number-3">1.4.</span> 第六章</h3>
+<div class="outline-text-3" id="text-1-4">
+</div>
+<div id="outline-container-org8a51376" class="outline-4">
+<h4 id="org8a51376"><span class="section-number-4">1.4.1.</span> 一、低钠血症</h4>
+<div class="outline-text-4" id="text-1-4-1">
+<p>
+（一）病因
+1．食物中缺乏盐类，仍饮水充足；
+2．水过多而使体内钠稀释；
+3．胃肠道丢失钠；
+4．滥用利尿剂；
+5．抗利尿激素使用过多；
+6．盐皮质激素缺乏；慢性肾上腺皮质机能减退
+</p>
+</div>
+</div>
+<div id="outline-container-org48bf793" class="outline-4">
+<h4 id="org48bf793"><span class="section-number-4">1.4.2.</span> 高钠血症</h4>
+<div class="outline-text-4" id="text-1-4-2">
+<p>
+（一）病因
+1．缺乏足够饮水；
+2．过食大量钠盐或医源性高钠血症；
+3．肾脏疾病近末期（少尿）；
+4．原发性或继发性醛固酮增多症；
+5．失水多于失钠（中暑、呼吸道消化道疾病、尿崩症）。
+</p>
+</div>
+</div>
+<div id="outline-container-org87398be" class="outline-4">
+<h4 id="org87398be"><span class="section-number-4">1.4.3.</span> 高钾血症的治疗</h4>
+<div class="outline-text-4" id="text-1-4-3">
+<p>
+1．停止补钾；
+2．排除高钾血症的根本原因；
+3．使用钙剂拮抗
+4．恢复细胞内外K+比率，稳定细胞膜电位。
+</p>
+<ol class="org-ol">
+<li>使用利尿剂排钾。</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orgf136ace" class="outline-4">
+<h4 id="orgf136ace"><span class="section-number-4">1.4.4.</span> </h4>
+</div>
+</div>
+<div id="outline-container-orgcfd5d34" class="outline-3">
+<h3 id="orgcfd5d34"><span class="section-number-3">1.5.</span> 第七章</h3>
+<div class="outline-text-3" id="text-1-5">
+</div>
+<div id="outline-container-org6834b24" class="outline-4">
+<h4 id="org6834b24"><span class="section-number-4">1.5.1.</span> 癌症的细胞学分类</h4>
+<div class="outline-text-4" id="text-1-5-1">
+<ol class="org-ol">
+<li>上皮：细胞边界可见，相互粘附，形成管状，片状 ；腺瘤，癌，腺癌，移行细胞癌，鳞状细胞癌</li>
+<li>间充质细胞：胞质边界不清楚、长尾巴；软组织肉瘤，纤维瘤，血管肉瘤，骨肉瘤，软骨肉瘤等</li>
+<li>圆形细胞肿瘤：散在的圆形细胞和圆形核 不互相黏附，单个，离散的；经常可以识别出特定的肿瘤</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-orge2db9eb" class="outline-4">
+<h4 id="orge2db9eb"><span class="section-number-4">1.5.2.</span> 癌症的细胞学特征</h4>
+<div class="outline-text-4" id="text-1-5-2">
+<ol class="org-ol">
+<li>大小-癌细胞可能大于良性细胞</li>
+<li>核扩大-核质比增加（N / C）</li>
+<li>核仁-与良性细胞相比，数量和大小增加</li>
+<li>染色过度-核和细胞质增生是肿瘤细胞的共同特征</li>
+<li>有丝分裂数增加和异常；肿瘤细胞中有丝分裂中的细胞数量通常增加 染色体分布出现异常</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org7f1e01d" class="outline-4">
+<h4 id="org7f1e01d"><span class="section-number-4">1.5.3.</span> 肿物的细胞学特征</h4>
+<div class="outline-text-4" id="text-1-5-3">
+<ol class="org-ol">
+<li>包涵囊肿（固缩型退变）</li>
+<li>唾液腺囊肿（ 肿胀型退变）</li>
+<li>脓肿</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org22f7273" class="outline-4">
+<h4 id="org22f7273"><span class="section-number-4">1.5.4.</span> 中性粒细胞退行性变化</h4>
+<div class="outline-text-4" id="text-1-5-4">
+<ol class="org-ol">
+<li>核固缩</li>
+<li>核破碎</li>
+<li>核溶解</li>
+</ol>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org09b08f2" class="outline-3">
+<h3 id="org09b08f2"><span class="section-number-3">1.6.</span> 第八章</h3>
+<div class="outline-text-3" id="text-1-6">
+</div>
+<div id="outline-container-org8bce598" class="outline-4">
+<h4 id="org8bce598"><span class="section-number-4">1.6.1.</span> 白球比</h4>
+<div class="outline-text-4" id="text-1-6-1">
+<p>
+白蛋白／球蛋白（A/G）
+比率（0.5-0.8），A/G倒置，提示肝功能损害
+</p>
+</div>
+</div>
+<div id="outline-container-orgd2dd4aa" class="outline-4">
+<h4 id="orgd2dd4aa"><span class="section-number-4">1.6.2.</span> 高蛋白血症、地板白血症原因</h4>
+<div class="outline-text-4" id="text-1-6-2">
+<p>
+一）高蛋白血症
+1．假性高蛋白血症
+2．高纤维蛋白原血症（急相反应蛋白）
+提示：炎症疾病和肿瘤疾病
+3．高球蛋白血症
+二）低蛋白血症
+1．低白蛋白血症
+（1）白蛋白的产生减少
+（2）白蛋白过度丢失
+2．低纤维蛋白原血症 （DIC）
+3．低球蛋白血症（γ-球蛋白水平下降）
+被动免疫失败；联合免疫缺陷病；IgM特异性丢失。
+</p>
+</div>
+</div>
+<div id="outline-container-orgc2085d4" class="outline-4">
+<h4 id="orgc2085d4"><span class="section-number-4">1.6.3.</span> （一）胆固醇</h4>
+<div class="outline-text-4" id="text-1-6-3">
+<p>
+1．血清胆固醇浓度升高
+提示：内分泌、肝脏或肾脏疾病；
+2．血清胆固醇浓度降低
+甲状腺机能亢进（甲羟戊酸CoA还原酶）
+</p>
+</div>
+</div>
+<div id="outline-container-org6c654e6" class="outline-4">
+<h4 id="org6c654e6"><span class="section-number-4">1.6.4.</span> 高脂血症的原因</h4>
+<div class="outline-text-4" id="text-1-6-4">
+<p>
+①内分泌障碍：雌激素抑制甘油三酯脂酶；
+②肝脏疾病：阻塞性黄疸
+③胰腺疾病：游离脂肪酸含量升高并有毒性
+④其他代谢综合征（糖尿病）；
+</p>
+</div>
+</div>
+<div id="outline-container-orgb823bd7" class="outline-4">
+<h4 id="orgb823bd7"><span class="section-number-4">1.6.5.</span> 一、葡萄糖</h4>
+<div class="outline-text-4" id="text-1-6-5">
+<p>
+（一）评价葡萄糖代谢的方法
+1．血液葡萄糖（3.6-6.6 mmol/L）
+（1）单胃兽应该禁食至少12h；
+（2）血糖测定主要是用葡萄糖氧化酶比色法。
+2．尿糖
+血糖浓度高于肾糖阈值9.0 mmol/L。
+3．葡萄糖耐量试验
+①静注或口服葡萄糖耐量试验，可用于检验胰
+岛素分泌不足或过多症。
+② 结合测定血清胰岛素鉴定糖尿病的类型。
+Ⅰ型糖尿病，血清胰岛素基底值很低；
+Ⅱ型糖尿病，血清胰岛素基底值正常或增高。
+③ 口服糖耐量试验可判定肠道对糖的吸收。
+</p>
+</div>
+</div>
+<div id="outline-container-orge483169" class="outline-4">
+<h4 id="orge483169"><span class="section-number-4">1.6.6.</span> 低糖血症</h4>
+<div class="outline-text-4" id="text-1-6-6">
+<p>
+血糖低于2.2 mmol/L
+① 胰岛素分泌过多
+② 肝功能不全
+③ 奶牛酮病
+④ 新生幼畜低血糖等
+</p>
+</div>
+</div>
+<div id="outline-container-org43301d9" class="outline-4">
+<h4 id="org43301d9"><span class="section-number-4">1.6.7.</span> 乳酸</h4>
+<div class="outline-text-4" id="text-1-6-7">
+<p>
+（一）基本概念
+组织供血量和氧化作用降低时，产生增多
+C3H6O3
+C3H5O3-<del>H</del>
+PKa为3.86；
+（二）临床意义
+休克、缺氧、过食谷类、持续剧烈运动和高热。
+</p>
+</div>
+</div>
+<div id="outline-container-org0094503" class="outline-4">
+<h4 id="org0094503"><span class="section-number-4">1.6.8.</span> 高脂血症特点①胆固醇含量高；②甘油三酯含量高；③低HDL</h4>
+<div class="outline-text-4" id="text-1-6-8">
+<p>
+血症
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org42f7ebb" class="outline-3">
+<h3 id="org42f7ebb"><span class="section-number-3">1.7.</span> 第九章</h3>
+<div class="outline-text-3" id="text-1-7">
+</div>
+<div id="outline-container-orgea0eabc" class="outline-4">
+<h4 id="orgea0eabc"><span class="section-number-4">1.7.1.</span> 三种高胆红素血症的鉴别</h4>
+<div class="outline-text-4" id="text-1-7-1">
+
+<div id="org315c543" class="figure">
+<p><img src="file:///home/elijah/Pictures/Screenshots/Screenshot from 2022-04-21 20-22-15.png" alt="Screenshot from 2022-04-21 20-22-15.png" width="700" style="border:2px solid black;" />
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org51c8d7d" class="outline-4">
+<h4 id="org51c8d7d"><span class="section-number-4">1.7.2.</span> 溴磺酞钠（BSP）清除试验</h4>
+<div class="outline-text-4" id="text-1-7-2">
+<p>
+通过静脉注入血清的染料溴磺酞钠（BSP）来检查肝脏排泄功能的试验。BSP与血浆蛋白结合并运输到肝脏，肝脏内BSP与白蛋白分离，分离的BSP大部分和GSH结合，随胆汁排出。
+</p>
+</div>
+</div>
+<div id="outline-container-orga7ae3c5" class="outline-4">
+<h4 id="orga7ae3c5"><span class="section-number-4">1.7.3.</span> 血清胆汁酸升高的临床意义</h4>
+<div class="outline-text-4" id="text-1-7-3">
+<p>
+①肝细胞损伤；
+②胆道梗阻
+③门脉分流
+</p>
+</div>
+</div>
+<div id="outline-container-orgd4eba9f" class="outline-4">
+<h4 id="orgd4eba9f"><span class="section-number-4">1.7.4.</span> 肝脏合成功能试验</h4>
+<div class="outline-text-4" id="text-1-7-4">
+<ol class="org-ol">
+<li>葡萄糖</li>
+<li>血浆蛋白</li>
+<li>OSPT和APTT</li>
+<li>胆固醇</li>
+</ol>
+</div>
+</div>
+<div id="outline-container-org52830d7" class="outline-4">
+<h4 id="org52830d7"><span class="section-number-4">1.7.5.</span> 黄疸的鉴别诊断</h4>
+<div class="outline-text-4" id="text-1-7-5">
+<p>
+溶血性黄疸、阻塞性黄疸、肝细胞性黄疸
+①胆汁淤滞性黄疸；
+②肝细胞性黄疸；
+③肝内局限性胆道阻塞。
+</p>
+</div>
+</div>
+<div id="outline-container-orge29be8c" class="outline-4">
+<h4 id="orge29be8c"><span class="section-number-4">1.7.6.</span> 一、肝组织活检的意义和应用</h4>
+<div class="outline-text-4" id="text-1-7-6">
+<p>
+1．肝病性质的鉴别诊断
+病毒性肝炎、寄生虫病、肝肿瘤、脂肪肝、肝脓肿。
+2．肝脏病变的程度和活动性
+精确诊断肝脏疾病的阶段。
+3．提供肝炎的病原学诊断
+4．鉴别黄疸的性质和原因
+</p>
+
+<ul class="org-ul">
+<li>经皮肋间途径和开腹手术两种方法</li>
+<li>肝组织活检的注意事项</li>
+</ul>
+<p>
+可能会引起内出血；
+引起细菌感染，导致肝炎或腹膜炎；
+穿破胆囊或胆管可产生并发症；
+</p>
+</div>
+</div>
+</div>
+<div id="outline-container-org3c601f6" class="outline-3">
+<h3 id="org3c601f6"><span class="section-number-3">1.8.</span> 第十章</h3>
+<div class="outline-text-3" id="text-1-8">
+<dl class="org-dl">
+<dt>蛋白尿</dt><dd>正常尿液中含微量蛋白质，若尿液中蛋白质含量超过正常值，称为蛋白尿</dd>
+<dt>尿糖</dt><dd>尿中的糖类，主要是指尿中的葡萄糖。正常尿液尿糖甚少，一般方法测不出来。血糖浓度过高时，较多糖类从尿中排出，称为尿糖。</dd>
+<dt>肾糖阈</dt><dd>肾糖阈是指当血糖浓度超过一定值时，肾小管对葡萄糖的重吸收达到极限，尿中开始出现葡萄糖，此时的血糖浓度即为肾糖阈。</dd>
+<dt>尿胆素原</dt><dd><dl class="org-dl">
+<dt>增加</dt><dd>肝脏疾病、溶血性疾病、便秘</dd>
+<dt>减少</dt><dd>胆道阻塞、肾炎的多尿期</dd>
+</dl></dd>
+<dt>管型</dt><dd><p>
+是尿中粘蛋白和血浆蛋白在远曲小管的酸性条件下形成的一种长管状物，碱性尿液中溶解。
+形成机制：
+</p>
+<ol class="org-ol">
+<li>原尿中含有一定量的蛋白质</li>
+<li>肾小管使尿液浓缩和酸化</li>
+<li>有可供交替使用的肾单位</li>
+</ol>
+<p>
+提示: 肾小管疾病、肾炎、肾化脓和肾盂肾炎
+</p></dd>
+</dl>
+
+
+
+<ol class="org-ol">
+<li><p>
+尿浓缩试验类型
+</p>
+<ol class="org-ol">
+<li>突然停止供水试验</li>
+<li>后叶加压素浓缩试验</li>
+<li value="意义">尿浓缩功能异常：</li>
+</ol>
+<p>
+1．肾脏疾病: 丧失2/3以上肾单位功能
+2．尿崩症
+</p></li>
+<li>氮质血症 临床意义：
+<ol class="org-ol">
+<li>BUN浓度变化的临床意义
+<ol class="org-ol">
+<li>BUN（尿素氮）浓度升高
+<ol class="org-ol">
+<li>肾前性氮血症
+<ol class="org-ol">
+<li>蛋白质分解代谢增强 :  胃肠道大出血或坏死、感染、发热、甲亢等</li>
+<li>肾脏血流减少 :  休克、脱水或水肿少尿、心功能不全等</li>
+</ol></li>
+<li>肾性氮血症 :  各种肾炎等肾实质损害</li>
+<li>肾后性氮血症 :  尿路结石或肿瘤、前列腺肥大（癌）、膀胱破裂等</li>
+</ol></li>
+<li>BUN浓度降低 :  肝病、肝肿瘤、肝硬化、门静脉吻合口狭窄、低蛋白性日粮、降低肠道吸收性肠病等</li>
+</ol></li>
+<li>Cr浓度变化的临床意义
+<ol class="org-ol">
+<li>血清Cr增多 :  肾脏损伤</li>
+<li>血清Cr降低 :  肌肉萎缩性病变等</li>
+</ol></li>
+</ol></li>
+<li>肾脏机能的血液生化其它指标
+<ol class="org-ol">
+<li>高磷血症</li>
+<li>高钾血症</li>
+<li>低钾血症</li>
+<li>代谢性酸中毒或碱中毒</li>
+</ol></li>
+</ol>
+</div>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="date">Created: 2022-04-22 Fri 09:19</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
